@@ -58,8 +58,7 @@
         $(document).ready(function(){
             $('#table').DataTable();
         });
-        function confirmDelete(itemId)
-        {
+        function confirmDelete(id){
             event.preventDefault();
             swal({
                 title : 'Apakah Anda Yakin?',
@@ -70,7 +69,7 @@
             })
             .then((willDelete) => {
                 if (willDelete){
-                    document.getElementById('itemId').submit();
+                    document.getElementById('delete-form' + id).submit();
                 }
             });
         }

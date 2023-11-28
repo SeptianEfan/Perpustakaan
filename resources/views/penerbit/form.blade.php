@@ -20,7 +20,7 @@
                 <input type="text" class="form-control" name="nama" id="nama">
             </div>
 
-            <button type="submit" class="btn btn-dark"> <i class="fa fa-piggy-bank"></i> Simpan</button>
+            <button type="submit" class="btn btn-success"> <i class="fa fa-save"></i> Simpan</button>
         </form>
       </div>
       <div class="modal-footer">

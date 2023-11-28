@@ -38,8 +38,9 @@
                                 <td>
                                     <form action="/penerbit/{{$p->id}}" method="GET"  id="delete-form{{$p->id}}">
                                         @method('delete')
-                                        <a href="/kategori/{{$p->id}}/edit" class="btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-                                        <button class="btn btn-sm btn-danger fa fa-trash" onclick="confirmDelete(delete-form{{$p->id}})"></button>
+                                        @csrf
+                                        <a href="/penerbit/{{$p->id}}/edit" class="btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                        <button class="btn btn-sm btn-danger fa fa-trash" onclick="confirmDelete('delete-form{{$p->id}}')"></button>
 
                                     </form>
                                     
@@ -63,8 +64,7 @@
     $(document).ready(function(){
             $('#table').DataTable();
         });
-    function confirmDelete(itemId)
-    {
+    function confirmDelete(id){
     event.preventDefault();
     swal({
            title: 'Yakin ?',
@@ -75,10 +75,9 @@
         })
         .then((willDelete)=>{
             if(willDelete){
-                document.getElementById('itemId').submit()
+                document.getElementById(id).submit()
             }
         });
-
     }
 </script>
 @endpush

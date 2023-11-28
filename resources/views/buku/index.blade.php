@@ -23,7 +23,7 @@
                         <thead>
                             <tr>
                                 <th style="width:10%">#</th>
-                                <th>Kode</th>
+                                <th>Gambar</th>
                                 <th>Judul</th>
                                 <th>Kategori</th>
                                 <th>Penerbit</th>
@@ -57,10 +57,12 @@
                                     <td><img src="{{asset('/storage/buku/'.$bk->gambar)}}" class="rounded" style="width: 150px"></td>
 
                                     <td>
-                                        <form action="{{route('buku.destroy', $bk->id)}}" method="GET" id="delete-form">
+                                        <form action="{{route('buku.destroy', $bk->id)}}" method="POST" id="formId">
+                                            {{-- <form action="/buku/{{$bk->id}}" method="POST" id="delete-form{{$bk->id}}"> --}}
                                             @method('delete')
+                                            @csrf
                                             <a href="{{route('buku.edit', $bk->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-                                            <button class="btn btn-sm btn-danger fa fa-trash" onclick="confirmDelete()"></button>
+                                            <button class="btn btn-sm btn-danger fa fa-trash" onclick="confirmDelete('formId{{$bk->id}}')"></button>
                                         </form>
                                     </td>
                                 </tr>
@@ -84,7 +86,7 @@
 
 
         <script>
-            function confirmDelete()
+            function confirmDelete(formId)
             {
                 event.preventDefault();
                 swal({
@@ -96,7 +98,7 @@
                 })
                 .then((willDelete) => {
                     if (willDelete) {
-                        document.getElementById('delete-form').submit();
+                        document.getElementById('formId').submit();
                     }
                 });
             }

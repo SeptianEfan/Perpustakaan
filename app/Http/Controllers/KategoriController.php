@@ -67,7 +67,7 @@ class KategoriController extends Controller
         $kategori->nama = $request->nama;
         $kategori->update();
 
-        return redirect('kategori')->with('edit','Edit Berhasil Hore');
+        return redirect('kategori')->with('sukses','Data Berhasil Diupdate');
 
     }
 
@@ -79,7 +79,7 @@ class KategoriController extends Controller
         $kategori = Kategori::find($id);
         $kategori->delete();
 
-        return redirect('kategori')->with('adios','Data Adios njir');
+        return redirect('kategori')->with('sukses','Data Berhasil Dihapus');
         
     }
 }

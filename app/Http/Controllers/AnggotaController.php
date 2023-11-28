@@ -68,19 +68,19 @@ class AnggotaController extends Controller
         $anggota->jenis_kelamin = $request->jenis_kelamin;
         $anggota->tempat_lahir = $request->tempat_lahir;
         $anggota->tanggal_lahir = $request->tanggal_lahir;
-        $anggota->telpon = $request->telpon;
+        $anggota->telepon = $request->telepon;
         // $anggota->alamat = $request->alamat;
         $anggota->foto = $request->foto;
         $anggota->update();
 
-        return redirect('anggota')->with('edit','Edit Berhasil Hore');
+        return redirect('anggota')->with('edit','Edit Berhasil Diupdate');
     }
 
     public function destroy($id)
     {
         $anggota = Anggota::find($id);
-        $anggota->destroy();
+        $anggota->delete();
 
-        return redirect('anggota')->with('adios','Data Adios njir');
+        return redirect('anggota')->with('sukses','Data Dihapus ');
     }
 }

@@ -65,23 +65,23 @@
                         </div>
 
                         <div class="row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="stok">Stok</label>
                                 <input type="number" name="stok" id="stok" class="form-control">
                             </div>
 
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="tahun_terbit">Tahun Terbit</label>
                                 <input type="number" name="tahun_terbit" id="tahun_terbit" class="form-control">
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="jumlah_halaman">Jumlah Halaman</label>
                                 <input type="number" name="jumlah_halaman" id="jumlah_halaman" class="form-control">
                             </div>
                         </div>
+
+                        
+                        
 
                         <div class="row">
                             <div class="form-group col-md-8">

@@ -59,7 +59,7 @@
                         <div class="row">
                         <div class="form-group col-md-6">
                             <label for="alamat"> Alamat</label>
-                            <textarea name="alamat" class="form-control" cols="30" rows="18" value="{{$anggota->alamat}}"></textarea>
+                            <textarea name="alamat" class="form-control" cols="30" rows="18">{{$anggota->alamat}}</textarea>
                         </div>
 
                         <div class="form-group col-md-6">
